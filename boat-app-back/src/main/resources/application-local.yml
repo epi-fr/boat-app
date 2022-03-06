@@ -14,5 +14,3 @@ spring:
   security:
     user:
       password: password
-
-debug: true
