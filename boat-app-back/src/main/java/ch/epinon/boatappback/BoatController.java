@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("boat")
 @AllArgsConstructor
 @Slf4j
+@CrossOrigin
 public class BoatController {
 
     private final BoatService boatService;

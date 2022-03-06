@@ -14,6 +14,8 @@ export class BoatService {
   }
 
   getAll(): Observable<Boat[]> {
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('user:password')});
+    // console.log(btoa('user:password'));
     return this.http.get<Boat[]>(baseUrl);
   }
 
@@ -26,6 +28,7 @@ export class BoatService {
   }
 
   update(id: any, data: any): Observable<any> {
+
     return this.http.put(`${baseUrl}/${id}`, data);
   }
 

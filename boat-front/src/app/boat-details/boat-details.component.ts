@@ -23,12 +23,16 @@ export class BoatDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.editMode = this.route.snapshot.paramMap.get('id') != null;
-    if (this.editMode) {
-      this.getBoat(this.route.snapshot.paramMap.get('id'));
-    } else {
+    this.route.paramMap.subscribe(params => {
       this.currentBoat = new Boat();
-    }
+      this.editMode = !isNaN(Number(params.get('id')));
+      if (this.editMode) {
+        this.getBoat(params.get('id'));
+      } else {
+        this.currentBoat = new Boat();
+      }
+    });
+
   }
 
   getBoat(id: any): void {
