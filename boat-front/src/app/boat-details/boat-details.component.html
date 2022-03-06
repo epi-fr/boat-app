@@ -1,0 +1,36 @@
+<form #f="ngForm" (ngSubmit)="onSubmitForm(f)">
+  <div *ngIf="currentBoat" class="row">
+    <div *ngIf="currentBoat" class="col-xs-12">
+      <label>Name</label>
+      <input [(ngModel)]="currentBoat.name" class="form-control" name="name" required type="text"/>
+      <br>
+      <label>Description</label>
+      <textarea [(ngModel)]="currentBoat.description" class="form-control" maxlength="500" name="description" required
+                rows="3" type="text">
+
+      </textarea>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-xs-12">
+      <button (click)="deleteBoat()"
+              *ngIf="editMode"
+              class="btn btn-danger"
+              style="margin-right: 5px"
+              type="button">Delete
+      </button>
+      <button
+        [disabled]="!f.valid"
+        class="btn btn-success"
+        style="margin-right: 5px"
+        type="submit">{{editMode ? 'Update' : 'Create'}}
+      </button>
+    </div>
+  </div>
+</form>
+<div *ngIf="!currentBoat" class="row">
+  <div class="col-xs-12">
+    <br/>
+    <p>Cannot access this Boat...</p>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<changeSet author="liquibase-docs" id="dataInit">
+    <sqlFile dbms="mysql"
+             encoding="utf8"
+             path="boat.data.sql"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"/>
+</changeSet>

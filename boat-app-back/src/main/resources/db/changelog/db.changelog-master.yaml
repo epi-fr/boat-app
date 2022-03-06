@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_boat_table
+      author: epi
+      changes:
+        - createTable:
+            tableName: boat
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: init_boat_data
+      author: epi
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            path: db/changelog/boat.data.sql
+            relativeToChangelogFile: false
+            splitStatements: true
+            stripComments: true

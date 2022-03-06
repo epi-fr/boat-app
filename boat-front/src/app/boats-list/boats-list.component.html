@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let boat of boats" class="boat-row" routerLink="/boat/{{boat.id}}">
+    <th scope="row">{{boat.id}}</th>
+    <td>{{boat.name}}</td>
+  </tr>
+  </tbody>
+</table>

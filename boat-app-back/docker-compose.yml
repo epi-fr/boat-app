@@ -1,0 +1,15 @@
+# Use root/example as user/password credentials
+version: '3.8'
+
+volumes:
+  mysql_data:
+    driver: local
+
+services:
+  boat-db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: boat-app-db-password
+      MYSQL_DATABASE: boat-db
+    ports:
+      - "3306:3306"
