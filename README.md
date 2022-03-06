@@ -39,3 +39,8 @@ Angular app to manage boat
 3. Run the app `npm start`
 
 The app will start 4200
+
+Default authentication :
+
+* username : user
+* password : password
